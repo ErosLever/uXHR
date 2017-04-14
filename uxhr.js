@@ -1,3 +1,6 @@
+// License: public domain - original author: Eros Lever - https://gist.github.com/ErosLever/1c555eaca5d2bc07fc73bae7c550f1f5
+// Inspired by tinyxhr.js (https://gist.github.com/4706967) and empijei (https://github.com/empijei)
+
 uxhr=(u,c,d,h,p)=>(K=(z,f)=>z?Object.keys(z).map(f):0,e=encodeURIComponent,x=new XMLHttpRequest,x.open(d?'POST':'GET',u),K(h,(k)=>x.setRequestHeader(k,h[k])),K(p,(k)=>x[k]=p[k]),x.onload=()=>c(x),x.send(d?d.trim?d:K(d,(k)=>e(k)+'='+e(d[k])).join('&'):''))
 
 /*

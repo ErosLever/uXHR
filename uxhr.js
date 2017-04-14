@@ -23,7 +23,7 @@ function uxhr(url, callback, data, headers, properties){
   }
   if(properties){
     for(var key in properties){
-      xhr[key] = properties[key]);
+      xhr[key] = properties[key];
     }
   }
   xhr.onload = function(){
@@ -35,7 +35,7 @@ function uxhr(url, callback, data, headers, properties){
       for(var key in data){
         var value = encodeURIComponent(data[key]);
         key = encodeURIComponent(key);
-        tmp.push(`${key}=${value}`);
+        tmp.push(key+'='+value);
       }
       data = tmp.join('&');
     }

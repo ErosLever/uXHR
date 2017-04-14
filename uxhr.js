@@ -1,4 +1,4 @@
-uxhr=(u,c,d,h,p)=>(K=Object.keys,e=encodeURIComponent,x=new XMLHttpRequest(),x.open(d?'POST':'GET',u),h?K(h).map((k)=>x.setRequestHeader(k,h[k])):1,p?K(p).map((k)=>x[k]=p[k]):1,x.onload=()=>(c(x)),x.send(d?d.trim?d:K(d).map((k)=>e(k)+'='+e(d[k])).join('&'):''))
+uxhr=(u,c,d,h,p)=>(K=(z,f)=>z?Object.keys(z).map(f):0,e=encodeURIComponent,x=new XMLHttpRequest,x.open(d?'POST':'GET',u),K(h,(k)=>x.setRequestHeader(k,h[k])),K(p,(k)=>x[k]=p[k]),x.onload=()=>c(x),x.send(d?d.trim?d:K(d,(k)=>e(k)+'='+e(d[k])).join('&'):''))
 
 /*
 //Example usages:

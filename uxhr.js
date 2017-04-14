@@ -11,10 +11,9 @@ uxhr=(u,c,d,h,p)=>(K=(z,f)=>z?Object.keys(z).map(f):0,e=encodeURIComponent,x=new
 //More readable version:
 function uxhr(url, callback, data, headers, properties){
   var xhr = new XMLHttpRequest();
+  var method = 'GET';
   if(data)
     method = 'POST';
-  else
-    method = 'GET';
   xhr.open(method,url);
   if(headers){
     for(var key in headers){

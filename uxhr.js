@@ -1,8 +1,7 @@
 // License: public domain - original author: Eros Lever - https://gist.github.com/ErosLever/1c555eaca5d2bc07fc73bae7c550f1f5
 // Inspired by tinyxhr.js (https://gist.github.com/4706967) and empijei (https://github.com/empijei)
 
-uxhr=(u,c,d,h,p)=>(K=(z,f)=>z?Object.keys(z).map(f):0,e=encodeURIComponent,x=new XMLHttpRequest,x.open(d?'POST':'GET',u),K(h,(k)=>x.setRequestHeader(k,h[k])),K(p,(k)=>x[k]=p[k]),x.onload=()=>c(x),x.send(d?d.trim?d:K(d,(k)=>e(k)+'='+e(d[k])).join('&'):''))
-
+uxhr=(u,c,d,h,p,m)=>(K=(z,f)=>z?Object.keys(z).map(f):0,e=encodeURIComponent,x=new XMLHttpRequest,x.open(m?m:d?'POST':'GET',u),K(h,k=>x.setRequestHeader(k,h[k])),K(p,k=>x[k]=p[k]),x.onload=()=>c(x),x.send(d?d.trim?d:K(d,k=>e(k)+'='+e(d[k])).join('&'):''))
 /*
 //Example usages:
   uxhr("/logout",(x)=>alert(x.responseText))
@@ -12,11 +11,15 @@ uxhr=(u,c,d,h,p)=>(K=(z,f)=>z?Object.keys(z).map(f):0,e=encodeURIComponent,x=new
   uxhr("/",(x)=>alert(x.responseText),0,{'X-Requested-With':'XMLHttpRequest'},{withCredentials:true})
 
 //More readable version:
-function uxhr(url, callback, data, headers, properties){
+function uxhr(url, callback, data, headers, properties,method){
   var xhr = new XMLHttpRequest();
-  var method = 'GET';
-  if(data)
-    method = 'POST';
+  if(!method){
+    if(data){
+      method = 'POST';
+    }else{
+      method = 'POST';
+    }
+  }
   xhr.open(method,url);
   if(headers){
     for(var key in headers){
@@ -29,7 +32,7 @@ function uxhr(url, callback, data, headers, properties){
     }
   }
   xhr.onload = function(){
-    callback(xhr)
+    callback(xhr);
   }
   if(data){
     if(typeof(data)!="string"){ // assume it's an object

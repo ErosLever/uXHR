@@ -12,7 +12,7 @@ uxhr=(u,c,d,h,p,m)=>(K=(z,f)=>z?Object.keys(z).map(f):0,e=encodeURIComponent,x=n
   uxhr("/",(x)=>alert(x.responseText),{asd:456},{'X-Requested-With':'XMLHttpRequest'},{withCredentials:true},'PUT')
 
 //More readable version:
-function uxhr(url, callback, data, headers, properties,method){
+function uxhr(url, callback, data, headers, properties, method){
   var xhr = new XMLHttpRequest();
   if(!method){
     if(data){

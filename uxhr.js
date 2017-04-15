@@ -9,6 +9,7 @@ uxhr=(u,c,d,h,p,m)=>(K=(z,f)=>z?Object.keys(z).map(f):0,e=encodeURIComponent,x=n
   uxhr("/api",(x)=>alert(x.responseText),JSON.stringify({test:1234}),{'Content-Type':'application/json'})
   uxhr("/profile",(x)=>alert(x.response.title),0,0,{responseType:'document'})
   uxhr("/",(x)=>alert(x.responseText),0,{'X-Requested-With':'XMLHttpRequest'},{withCredentials:true})
+  uxhr("/",(x)=>alert(x.responseText),{asd:456},{'X-Requested-With':'XMLHttpRequest'},{withCredentials:true},'PUT')
 
 //More readable version:
 function uxhr(url, callback, data, headers, properties,method){

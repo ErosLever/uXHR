@@ -19,7 +19,7 @@ function uxhr(url, callback, data, headers, properties, method){
     if(data){
       method = 'POST';
     }else{
-      method = 'POST';
+      method = 'GET';
     }
   }
   xhr.open(method,url);

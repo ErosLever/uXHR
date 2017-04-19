@@ -1,6 +1,5 @@
 # uXHR (micro XMLHttpRequest wrapper) - Rigorously minified manually in 0xFF bytes
 
-License: public domain - original author: Eros Lever - https://gist.github.com/ErosLever/1c555eaca5d2bc07fc73bae7c550f1f5
 Inspired by tinyxhr.js (https://gist.github.com/4706967) and empijei (https://github.com/empijei)
 
 *Example usages:*

@@ -2,6 +2,9 @@
 
 Inspired by tinyxhr.js (https://gist.github.com/4706967) and empijei (https://github.com/empijei)
 
+*Usage:*
+  uxhr(URL,callback,postParameters,headersHTTP,xhrProperties)
+
 *Example usages:*
 -  uxhr("/logout",x=>alert(x.responseText))
 -  uxhr("/login",x=>alert(x.responseText),{username:'admin',password:'admin'})

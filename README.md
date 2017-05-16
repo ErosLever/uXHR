@@ -3,7 +3,7 @@
 Inspired by tinyxhr.js (https://gist.github.com/4706967) and empijei (https://github.com/empijei)
 
 *Usage:*
-  uxhr(URL,callback,postParameters,headersHTTP,xhrProperties)
+  uxhr(URL,callback,postParameters,headersHTTP,xhrProperties,httpMethod)
 
 *Example usages:*
 -  uxhr("/logout",x=>alert(x.responseText))
